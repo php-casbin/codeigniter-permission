@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/codeigniter4/framework/tests/_support/_bootstrap.php"
+        backupGlobals="false"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        stopOnError="false"
+        stopOnFailure="false"
+        stopOnIncomplete="false"
+        stopOnSkipped="false">
+    <testsuites>
+        <testsuite name="app">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <log type="coverage-html" target="build/html"/>
+    </logging>
+    <php>
+        <env name="app.baseURL" value="http://example.com"/>
+        <env name="database.tests.hostname" value="127.0.0.1"/>
+        <env name="database.tests.database" value="casbin"/>
+        <env name="database.tests.username" value="root"/>
+        <env name="database.tests.password" value=""/>
+        <env name="database.tests.DBDriver" value="MySQLi"/>
+    </php>
+
+</phpunit>

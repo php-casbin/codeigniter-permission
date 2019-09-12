@@ -1,0 +1,39 @@
+{
+    "name": "casbin/codeigniter",
+    "description": "Associate users with roles and permissions, use Casbin in CodeIgniter4 Web Framework.",
+    "authors": [
+        {
+            "name": "TechLee",
+            "email": "techlee@qq.com"
+        }
+    ],
+    "license": "Apache-2.0",
+    "keywords": [        
+        "casbin",
+        "rbac",
+        "acl",
+        "authorization",
+        "permission",
+        "abac",
+        "access control",
+        "codeigniter"
+    ],
+    "require": {
+        "codeigniter4/framework": "^4@rc",
+        "casbin/casbin": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Casbin\\CodeIgniter\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0",
+        "php-coveralls/php-coveralls": "^2.1"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Casbin\\CodeIgniter\\Tests\\": "tests/"
+        }
+    }
+}
