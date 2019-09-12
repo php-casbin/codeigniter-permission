@@ -1,5 +1,5 @@
 {
-    "name": "casbin/codeigniter",
+    "name": "casbin/codeigniter-permission",
     "description": "Associate users with roles and permissions, use Casbin in CodeIgniter4 Web Framework.",
     "authors": [
         {
