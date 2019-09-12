@@ -22,7 +22,7 @@ class Enforcer extends BaseConfig
             // Available Settings: "file", "text"
             'config_type' => 'file',
 
-            'config_file_path' => __DIR__.'/lauthz-rbac-model.conf',
+            'config_file_path' => __DIR__.'/rbac-model.conf',
 
             'config_text' => '',
         ],

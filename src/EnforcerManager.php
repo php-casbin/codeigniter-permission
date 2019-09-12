@@ -96,7 +96,7 @@ class EnforcerManager
     }
 
     /**
-     * Get the lauthz driver configuration.
+     * Get the enforcer driver configuration.
      *
      * @param string $name
      *
@@ -139,16 +139,17 @@ class EnforcerManager
         $this->config->default = $name;
     }
 
-    
-	/**
-	 * gets default config for enforcer.
-	 *
-	 * @param string $name
-	 * @return void
-	 */
+    /**
+     * gets default config for enforcer.
+     *
+     * @param string $name
+     *
+     * @return void
+     */
     public function getDefaultConfig()
     {
         $name = $this->getDefaultGuard();
+
         return $this->config->{$name};
     }
 

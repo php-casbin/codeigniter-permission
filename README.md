@@ -39,10 +39,10 @@ All you need to learn to use `Casbin` first.
 
 ## Installation
 
-Require this package in the `composer.json` of your Laravel project. This will download the package.
+Require this package in the `composer.json` of your CodeIgniter project. This will download the package.
 
 ```
-composer require casbin/codeigniter-permission
+composer require casbin/codeigniter-permission:dev-master
 ```
 
 To migrate the migrations, run the migrate command:
@@ -197,7 +197,7 @@ In the `Config\Enforcer.php` file, it should be like this:
 
 namespace Config;
 
-use Casbin\CodeIgniter\Config as BaseConfig;
+use Casbin\CodeIgniter\Config\Enforcer as BaseConfig;
 use Casbin\CodeIgniter\Adapters\DatabaseAdapter;
 
 class Enforcer extends BaseConfig
@@ -217,7 +217,7 @@ class Enforcer extends BaseConfig
             // Available Settings: "file", "text"
             'config_type' => 'file',
 
-            'config_file_path' => __DIR__.'/lauthz-rbac-model.conf',
+            'config_file_path' => __DIR__.'/rbac-model.conf',
 
             'config_text' => '',
         ],
@@ -295,7 +295,7 @@ Sets your own cache configs in `Config\Enforcer.php`.
 
 ## Thinks
 
-[Casbin](https://github.com/php-casbin/php-casbin) in Laravel. You can find the full documentation of Casbin [on the website](https://casbin.org/).
+[PHP-Casbin](https://github.com/php-casbin/php-casbin). You can find the full documentation of Casbin [on the website](https://casbin.org/).
 
 ## License
 
