@@ -20,7 +20,8 @@
     ],
     "require": {
         "codeigniter4/framework": "^4@rc",
-        "casbin/casbin": "^1.0"
+        "casbin/casbin": "^2.0",
+        "casbin/psr3-bridge": "^1.1"
     },
     "autoload": {
         "psr-4": {

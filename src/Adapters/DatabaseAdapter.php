@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Casbin\CodeIgniter\Adapters;
 
+use Casbin\Model\Model;
 use Casbin\Persist\Adapter;
 use Casbin\Persist\AdapterHelper;
 use Casbin\CodeIgniter\Models\RuleModel;
@@ -46,7 +49,7 @@ class DatabaseAdapter implements Adapter
      * @param string $ptype
      * @param array  $rule
      */
-    public function savePolicyLine($ptype, array $rule)
+    public function savePolicyLine(string $ptype, array $rule): void
     {
         $col['ptype'] = $ptype;
         foreach ($rule as $key => $value) {
@@ -60,12 +63,10 @@ class DatabaseAdapter implements Adapter
      * loads all policy rules from the storage.
      *
      * @param Model $model
-     *
-     * @return mixed
      */
-    public function loadPolicy($model)
+    public function loadPolicy(Model $model): void
     {
-        $rows = $this->model->getAllFromCache();        
+        $rows = $this->model->getAllFromCache();
 
         foreach ($rows as $row) {
             $line = implode(', ', array_filter($row, function ($val) {
@@ -79,39 +80,33 @@ class DatabaseAdapter implements Adapter
      * saves all policy rules to the storage.
      *
      * @param Model $model
-     *
-     * @return bool
      */
-    public function savePolicy($model)
+    public function savePolicy(Model $model): void
     {
-        foreach ($model->model['p'] as $ptype => $ast) {
+        foreach ($model['p'] as $ptype => $ast) {
             foreach ($ast->policy as $rule) {
                 $this->savePolicyLine($ptype, $rule);
             }
         }
 
-        foreach ($model->model['g'] as $ptype => $ast) {
+        foreach ($model['g'] as $ptype => $ast) {
             foreach ($ast->policy as $rule) {
                 $this->savePolicyLine($ptype, $rule);
             }
         }
-
-        return true;
     }
 
     /**
-     * Adds a policy rule to the storage.
+     * adds a policy rule to the storage.
      * This is part of the Auto-Save feature.
      *
      * @param string $sec
      * @param string $ptype
      * @param array  $rule
-     *
-     * @return mixed
      */
-    public function addPolicy($sec, $ptype, $rule)
+    public function addPolicy(string $sec, string $ptype, array $rule): void
     {
-        return $this->savePolicyLine($ptype, $rule);
+        $this->savePolicyLine($ptype, $rule);
     }
 
     /**
@@ -120,10 +115,8 @@ class DatabaseAdapter implements Adapter
      * @param string $sec
      * @param string $ptype
      * @param array  $rule
-     *
-     * @return mixed
      */
-    public function removePolicy($sec, $ptype, $rule)
+    public function removePolicy(string $sec, string $ptype, array $rule): void
     {
         $count = 0;
 
@@ -138,8 +131,6 @@ class DatabaseAdapter implements Adapter
                 ++$count;
             }
         }
-
-        return $count;
     }
 
     /**
@@ -149,11 +140,9 @@ class DatabaseAdapter implements Adapter
      * @param string $sec
      * @param string $ptype
      * @param int    $fieldIndex
-     * @param mixed  ...$fieldValues
-     *
-     * @return mixed
+     * @param string ...$fieldValues
      */
-    public function removeFilteredPolicy($sec, $ptype, $fieldIndex, ...$fieldValues)
+    public function removeFilteredPolicy(string $sec, string $ptype, int $fieldIndex, string ...$fieldValues): void
     {
         $count = 0;
 
@@ -171,7 +160,5 @@ class DatabaseAdapter implements Adapter
                 ++$count;
             }
         }
-
-        return $count;
     }
 }
