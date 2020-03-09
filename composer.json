@@ -8,7 +8,7 @@
         }
     ],
     "license": "Apache-2.0",
-    "keywords": [        
+    "keywords": [
         "casbin",
         "rbac",
         "acl",
@@ -18,8 +18,12 @@
         "access control",
         "codeigniter"
     ],
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
     "require": {
-        "codeigniter4/framework": "^4@rc",
+        "php": ">=7.2",
+        "codeigniter4/framework": "^4",
         "casbin/casbin": "^2.0",
         "casbin/psr3-bridge": "^1.1"
     },
