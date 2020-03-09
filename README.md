@@ -39,10 +39,10 @@ All you need to learn to use `Casbin` first.
 
 ## Installation
 
-Require this package in the `composer.json` of your CodeIgniter project. This will download the package.
+Require this package in the `composer.json` of your `CodeIgniter 4` project. This will download the package.
 
 ```
-composer require casbin/codeigniter-permission:dev-master
+composer require casbin/codeigniter-permission
 ```
 
 To migrate the migrations, run the migrate command:
