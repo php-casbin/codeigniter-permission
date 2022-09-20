@@ -33,7 +33,8 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^7.0",
+        "php-coveralls/php-coveralls": "^2.1"
     },
     "autoload-dev": {
         "psr-4": {
