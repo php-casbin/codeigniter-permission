@@ -24,7 +24,7 @@
     "require": {
         "php": ">=7.2",
         "codeigniter4/framework": "^4",
-        "casbin/casbin": "^2.0",
+        "casbin/casbin": "^3.21.6",
         "casbin/psr3-bridge": "^1.1"
     },
     "autoload": {
