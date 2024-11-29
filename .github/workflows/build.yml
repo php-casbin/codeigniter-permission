@@ -23,11 +23,9 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [ 7.2, 7.3,7.4,8.0 ]
+        php: [8.1, 8.2, 8.3]        
 
-        stability: [ prefer-lowest, prefer-stable ]            
-
-    name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
+    name: PHP ${{ matrix.php }}
 
     steps:
       - name: Checkout code
@@ -57,7 +55,7 @@ jobs:
           COVERALLS_PARALLEL: true
           COVERALLS_FLAG_NAME: ${{ runner.os }} - ${{ matrix.php }}
         run: |
-          composer global require php-coveralls/php-coveralls:^2.4
+          composer global require php-coveralls/php-coveralls:^2.7
           php-coveralls --coverage_clover=build/logs/clover.xml -v
 
   upload-coverage:

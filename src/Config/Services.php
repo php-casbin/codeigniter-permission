@@ -15,7 +15,7 @@ class Services extends BaseService
      *
      * @return \Casbin\CodeIgniter\EnforcerManager
      */
-    public static function enforcer(Enforcer $config = null, bool $getShared = true)
+    public static function enforcer(?Enforcer $config = null, bool $getShared = true)
     {
         if ($getShared) {
             return static::getSharedInstance('enforcer', $config);

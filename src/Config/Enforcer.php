@@ -47,8 +47,8 @@ class Enforcer extends BaseConfig
             // changes whether Casbin will log messages to the Logger.
             'enabled' => false,
 
-            // Casbin Logger
-            'logger' => \Casbin\CodeIgniter\Logger::class,
+            // Casbin Logger, Supported: \Psr\Log\LoggerInterface|string
+            'logger' => 'logger',
         ],
 
         'cache' => [
