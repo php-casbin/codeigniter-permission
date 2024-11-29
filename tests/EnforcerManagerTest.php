@@ -2,14 +2,17 @@
 
 namespace Casbin\CodeIgniter\Tests;
 
-use CodeIgniter\Test\CIDatabaseTestCase;
+use CodeIgniter\Test\CIUnitTestCase;
+use CodeIgniter\Test\DatabaseTestTrait;
 use Config\Services
 ;
 use Config\Autoload;
 use Config\Modules;
 
-class EnforcerManagerTest extends CIDatabaseTestCase
+class EnforcerManagerTest extends CIUnitTestCase
 {    
+    use DatabaseTestTrait;
+
     protected function createApplication()
     {
         $app = parent::createApplication();

@@ -5,6 +5,8 @@ namespace Casbin\CodeIgniter;
 use Casbin\Enforcer;
 use Casbin\Model\Model;
 use Casbin\Log\Log;
+use Casbin\Log\Logger\DefaultLogger;
+use Config\Services;
 use InvalidArgumentException;
 use Casbin\CodeIgniter\Config\Enforcer as EnforcerConfig;
 
@@ -75,7 +77,11 @@ class EnforcerManager
         }
 
         if ($logger = $config['log']['logger']) {
-            Log::setLogger(new $logger());
+            if (is_string($logger)) {
+                $logger = new DefaultLogger(Services::$logger());
+            }
+
+            Log::setLogger($logger);
         }
 
         $model = new Model();
@@ -92,7 +98,7 @@ class EnforcerManager
             }
         }
 
-        return new Enforcer($model, $adapter, $config['log']['enabled']);
+        return new Enforcer($model, $adapter, $logger, $config['log']['enabled']);
     }
 
     /**
