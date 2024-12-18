@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-    <a href="https://travis-ci.org/php-casbin/codeigniter-permission">
-        <img src="https://travis-ci.org/php-casbin/codeigniter-permission.svg?branch=master" alt="Build Status">
+    <a href="https://github.com/php-casbin/codeigniter-permission/actions/workflows/phpunit.yml">
+        <img src="https://github.com/php-casbin/codeigniter-permission/actions/workflows/phpunit.yml/badge.svg" alt="Build Status">
     </a>
     <a href="https://coveralls.io/github/php-casbin/codeigniter-permission">
         <img src="https://coveralls.io/repos/github/php-casbin/codeigniter-permission/badge.svg" alt="Coverage Status">
