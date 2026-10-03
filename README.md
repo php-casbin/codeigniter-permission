@@ -185,7 +185,7 @@ Determines whether a user has a permission.
 $enforcer->hasPermissionForUser('eve', 'articles', 'read');  // true or false
 ```
 
-See [Casbin API](https://casbin.org/docs/en/management-api) for more APIs.
+See [Casbin API](https://casbin.apache.org/docs/management-api/) for more APIs.
 
 ### Multiple enforcers
 
@@ -295,7 +295,7 @@ Sets your own cache configs in `Config\Enforcer.php`.
 
 ## Thinks
 
-[PHP-Casbin](https://github.com/php-casbin/php-casbin). You can find the full documentation of Casbin [on the website](https://casbin.org/).
+[PHP-Casbin](https://github.com/php-casbin/php-casbin). You can find the full documentation of Casbin [on the website](https://casbin.apache.org/).
 
 ## License
 
